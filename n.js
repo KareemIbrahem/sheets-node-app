@@ -3,16 +3,16 @@ google.options({
   http2: true,
 });
 const express = require("express");
-// const cors = require("cors");
-// const corsOptions = {
-//   origin: "https://spot-hub-kareemibrahems-projects.vercel.app",
-//   optionsSuccessStatus: 200,
-// };
-// app.use(cors(corsOptions));
+const cors = require("cors");
+const corsOptions = {
+  origin: "https://sheets-node-pnxftv7z9-my-team-c7844730.vercel.app/",
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 const app = express();
 const port = 8000;
-// app.use(cors());
+app.use(cors());
 
 app.use(express.static("public"));
 
