@@ -1,4 +1,7 @@
 const { google } = require("googleapis");
+google.options({
+  http2: true,
+});
 const express = require("express");
 // const cors = require("cors");
 // const corsOptions = {
