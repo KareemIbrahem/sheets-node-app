@@ -1,19 +1,14 @@
-const { google } = require("googleapis");
-google.options({
-  http2: true,
-});
 const express = require("express");
+const { google } = require("googleapis");
 const cors = require("cors");
+const app = express();
+const port = 8000;
 const corsOptions = {
   origin: "https://sheets-node-pnxftv7z9-my-team-c7844730.vercel.app/",
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
-
-const app = express();
-const port = 8000;
 app.use(cors());
-
 app.use(express.static("public"));
 
 // Define a route to handle the button click
