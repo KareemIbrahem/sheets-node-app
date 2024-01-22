@@ -74,7 +74,7 @@ app.get("/append", async (req, res) => {
     await sheetInstance.spreadsheets.values.append({
       auth: googleAuth,
       spreadsheetId: googleSheetId,
-      range: "Sheet1!A1:Z1000",
+      range: "Sheet1!A:Z",
       valueInputOption: "RAW",
       resource: {
         values: updateToGsheet,
