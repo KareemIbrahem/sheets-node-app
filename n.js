@@ -61,9 +61,6 @@ app.get("/append", async (req, res) => {
       : [];
 
     if (existingPhoneNumbers.includes(phone)) {
-      console.log(
-        "Phone number already exists in the sheet. Validation failed."
-      );
       return res.status(400).json({
         error: "Phone number already in use. Please enter a unique number.",
       });
@@ -86,7 +83,6 @@ app.get("/append", async (req, res) => {
     // Send a response to the client
     res.json({ message: "Function called successfully!" });
   } catch (err) {
-    console.log("Error:", err);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
